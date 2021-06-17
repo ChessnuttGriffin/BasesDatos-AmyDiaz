@@ -6,7 +6,7 @@
     1. Paciente
     2. Cita
     3. Odontologo
-    4. Registro
+    4. Expediente
     5. Tratamiento
     6. Receta_med
     7. Consultorio
@@ -23,11 +23,11 @@
   ### Odontologo
   Almacena entidades de tipo odontologo, con atributos nombre, DNI (PK), especialidad (son valores por default). Se guarda la informacion del odontologo, junto con la especialidad que ejerce, ya se tecnico dental, asistente dental, o solo el rol de doctor.
   
-  ### Expedientes
+  ### Expediente
   Almacena entidades de tipo registro, con atributos idRegistro (PK), descripcion. Son los expedientes, osea los datos que el paciente presenta antes de ser antendido.
   
   ### Tratamiento
-  Almacen entidades de tipo tratamiento, con atributos nombre, idTratamiento. Son los diferentes tratamientos que la clinica ofrece a los clientes.
+  Almacen entidades de tipo tratamiento, con atributos nombre, precio e idTratamiento. Son los diferentes tratamientos que la clinica ofrece a los clientes.
   
   ### Receta_med
   Almacen de entidades tipo receta_med (recetas prescristas por el doctor) con atributos, idReceta, fecha, descripcion. Se guarda la informacion de las recetas medicas y que puedan ser vistas por el medico como por el paciente.
