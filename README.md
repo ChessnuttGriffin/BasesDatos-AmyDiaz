@@ -30,13 +30,13 @@
   Almacen entidades de tipo tratamiento, con atributos nombre, precio e idTratamiento. Son los diferentes tratamientos que la clinica ofrece a los clientes.
   
   ### Receta_med
-  Almacen de entidades tipo receta_med (recetas prescristas por el doctor) con atributos, idReceta, fecha, descripcion. Se guarda la informacion de las recetas medicas y que puedan ser vistas por el medico como por el paciente.
+  Almacen de entidades tipo receta_med (recetas prescristas por el doctor) con atributos, idReceta, fecha, descripcion y el Id_Paciente. Se guarda la informacion de las recetas medicas y que puedan ser vistas por el medico como por el paciente.
   
   ### Local
-  Local almacena la informacion relacionada a la ubicacion del local de la misma clinica (Como es una empresa, pueden haber varias locales con diferentes ubicaciones). Sus atributos son la ubicacion, Id_local y el telefono, que es multivalor.
+  Local almacena la informacion relacionada a la ubicacion del local de la misma clinica (Como es una empresa, pueden haber varias locales con diferentes ubicaciones). Sus atributos son la direccion que es compuesta (Avenida, Calle y ciudad), Id_local y el telefono, que es multivalor.
   
   ### Consultorio
-  Almacena la informacion del consultorio del odontologo, tiene un idConsultorio, que es la PK del consultorio en que trabaja, ya que es un solo local y un num_consultorio que es el numero del consultorio. Es una entidad debil porque sin un local, no existiria un consultorio. 
+  Almacena la informacion del consultorio del odontologo, tiene un num_Consultorio, que es la PK del consultorio en que trabaja, ya que es un solo local, la ubicacion y un nombre de consultorio. Es una entidad debil porque sin un local, no existiria un consultorio. 
   
   ### Empleado
   Almacena entidades de tipo empleado, aqui se encuentran todos los empleados que son parte de la clinica pero tienen funciones a parte del odontologo. Sus atributos son el DNI (PK), Cargo, Telefono, Sexo, Nombre (Atributo compuesto).
@@ -53,9 +53,10 @@ Almacena los gastos administrativos de la empresa, en este caso por medio de las
   1. El paciente realiza una consulta, esto se puede hacer gracias al id del paciente, que es una instancia de Paciente que contiene todos los datos en el.
   2. El paciente tiene un expdiente diferente cada vez que se realiza un tratamiento.
   3. El expediente lo crea el odontologo, quien tambien es el que brinda la consulta.
-  4. El Odontologo es quien realiza el tratamiento especifico y quien establece las redacta las recetas medicas.
+  4. El Odontologo es quien realiza el tratamiento especifico y quien establece las redacta las recetas medicas, tambien es quien puede realizar varios tratamientos.
   5. El odontologo trabaja en un local (Es una sola clinica, que tiene varios locales) y en el mismo local, el odontologo tiene un consultorio, que es como la          oficina del odontologo (Un odontologo, puede no tener un consultorio, o bien puede compartir el consultorio con otro odontologo).
   6. En el local laboran varios empleados.
+  7. Tratamiento tiene una relacion con factura donde solo se puede dar una factura por tratamiento.
   
   
   
